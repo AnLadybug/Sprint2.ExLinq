@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="BaseEx/BaseEx.csproj" />
+  <Project Path="ConsoleApp1/ConsoleApp1.csproj" Id="248f9eaa-1a3b-4281-abce-79e066c660fa" />
+  <Project Path="PractiiceAPIException/PractiiceAPIException.csproj" Id="81192f5e-5121-47ef-bf15-e0bb87042038" />
+</Solution>

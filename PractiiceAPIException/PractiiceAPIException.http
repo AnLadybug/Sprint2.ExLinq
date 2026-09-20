@@ -1,0 +1,6 @@
+@PractiiceAPIException_HostAddress = http://localhost:5249
+
+GET {{PractiiceAPIException_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
