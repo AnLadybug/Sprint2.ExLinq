@@ -1,4 +1,5 @@
 ﻿using ConsoleApp1;
+using System.Linq.Expressions;
 using System.Reflection;
 
 // See https://aka.ms/new-console-template for more information
@@ -105,4 +106,15 @@ var basketResults = courses
 //соберёт дерево выражений, эквивалентное предикату p => p.Stock < 10,
 //и проверьте с его помощью продукт:
 
+ParameterExpression productParam = Expression.Parameter(typeof(Product), "p");
+MemberExpression stockProperty = Expression.Property(productParam, "Stock");
+ConstantExpression threshold = Expression.Constant(10);
+BinaryExpression comparison = Expression.GreaterThan(stockProperty, threshold);
+Expression<Func<Product, bool>> lambda = Expression.Lambda<Func<Product, bool>>(comparison, productParam);
+
+Console.WriteLine($"Выражение: {lambda}");
+
+var compiled = lambda.Compile();
 var cheapProduct = new Product { Name = "Laptop", Stock = 5 };
+
+Console.WriteLine($"Результат для Stock=5: {compiled(cheapProduct)}");

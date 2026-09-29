@@ -15,7 +15,7 @@ namespace ConsoleApp1
 
     public class TestExpression
     {
-        public void CreateExpression()
+        public void CreateExpression(Product product)
         {
             //p => p.Stock < 10
             ParameterExpression productParam = Expression.Parameter(typeof(Product), "p");
